@@ -12,6 +12,7 @@
 		7800CC2D2355D495007B55E3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800CC2C2355D495007B55E3 /* CollectionViewCell.swift */; };
 		7800CC2F2355D9A4007B55E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800CC2E2355D9A4007B55E3 /* NetworkManager.swift */; };
 		7800CC332355F4FB007B55E3 /* ImageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800CC322355F4FB007B55E3 /* ImageProperties.swift */; };
+		78248C25235862C6009D4525 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78248C24235862C6009D4525 /* DataProvider.swift */; };
 		782FA21B2354A7E400D62F5F /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782FA21A2354A7E400D62F5F /* Course.swift */; };
 		782FA21D2354AE4100D62F5F /* WebsiteDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782FA21C2354AE4100D62F5F /* WebsiteDescription.swift */; };
 		A806CF94210B4EA300574064 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806CF93210B4EA300574064 /* ImageViewController.swift */; };
@@ -30,6 +31,7 @@
 		7800CC2C2355D495007B55E3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		7800CC2E2355D9A4007B55E3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7800CC322355F4FB007B55E3 /* ImageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProperties.swift; sourceTree = "<group>"; };
+		78248C24235862C6009D4525 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		782FA21A2354A7E400D62F5F /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		782FA21C2354AE4100D62F5F /* WebsiteDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteDescription.swift; sourceTree = "<group>"; };
 		A806CF93210B4EA300574064 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,35 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		78248C2623586638009D4525 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				7800CC2E2355D9A4007B55E3 /* NetworkManager.swift */,
+				78248C24235862C6009D4525 /* DataProvider.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		78248C2723586654009D4525 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7800CC322355F4FB007B55E3 /* ImageProperties.swift */,
+				A8255C8521410DFE0074F6D0 /* TableViewCell.swift */,
+				7800CC2C2355D495007B55E3 /* CollectionViewCell.swift */,
+				782FA21C2354AE4100D62F5F /* WebsiteDescription.swift */,
+				782FA21A2354A7E400D62F5F /* Course.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		78248C282358666A009D4525 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A83C30242108401A00592AE4 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A83C30142108401A00592AE4 = {
 			isa = PBXGroup;
 			children = (
@@ -106,13 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				7800CC312355DBB6007B55E3 /* Controllers */,
-				7800CC322355F4FB007B55E3 /* ImageProperties.swift */,
-				7800CC2E2355D9A4007B55E3 /* NetworkManager.swift */,
-				A83C30242108401A00592AE4 /* Main.storyboard */,
-				A8255C8521410DFE0074F6D0 /* TableViewCell.swift */,
-				7800CC2C2355D495007B55E3 /* CollectionViewCell.swift */,
-				782FA21C2354AE4100D62F5F /* WebsiteDescription.swift */,
-				782FA21A2354A7E400D62F5F /* Course.swift */,
+				78248C2623586638009D4525 /* Network Layer */,
+				78248C282358666A009D4525 /* View */,
+				78248C2723586654009D4525 /* Model */,
 				7800CC302355DB83007B55E3 /* Supporting files */,
 				A83C302C2108401B00592AE4 /* Info.plist */,
 			);
@@ -152,6 +179,11 @@
 					A83C301C2108401A00592AE4 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1030;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -197,6 +229,7 @@
 				782FA21D2354AE4100D62F5F /* WebsiteDescription.swift in Sources */,
 				7800CC2F2355D9A4007B55E3 /* NetworkManager.swift in Sources */,
 				A806CF94210B4EA300574064 /* ImageViewController.swift in Sources */,
+				78248C25235862C6009D4525 /* DataProvider.swift in Sources */,
 				A8255C80214103450074F6D0 /* WebViewController.swift in Sources */,
 				A83C30212108401A00592AE4 /* AppDelegate.swift in Sources */,
 				7800CC2B2355D471007B55E3 /* MainViewController.swift in Sources */,
