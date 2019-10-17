@@ -17,7 +17,8 @@ class DataProvider: NSObject {
     private lazy var bgSession: URLSession = {
         let config = URLSessionConfiguration.background(withIdentifier: "ru.yaskin.Networking")
         //Networking3
-//        config.isDiscretionary = true
+//        config.isDiscretionary = true //запуск задачи в оптимальное время (по умолч. false)
+        config.timeoutIntervalForRequest = 300 //время ожидания сети
         config.sessionSendsLaunchEvents = true
         return URLSession(configuration: config, delegate: self, delegateQueue: nil)
     }()
