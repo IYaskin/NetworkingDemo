@@ -18,11 +18,16 @@ enum Actions: String, CaseIterable {
     case uploadImage = "Upload Image"
     case downloadFile = "Download File"
     case ourCoursesAlamofire = "Our Courses (Alamofire)"
+    case responseData = "Response Data"
+    case responseString = "Response String"
+    case response = "Response"
+    case downloadLargeImage = "Download Large Image"
 }
 
 private let reuseIdentifier = "Cell"
 private let url = "https://jsonplaceholder.typicode.com/posts"
 private let uploadImage = "https://api.imageban.ru/v1"
+private let swiftbookApi = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
 
 class MainViewController: UICollectionViewController {
     
@@ -115,7 +120,15 @@ class MainViewController: UICollectionViewController {
             dataProvider.startDownload()
         case .ourCoursesAlamofire:
             performSegue(withIdentifier: "OurCoursesWithAlamofire", sender: self)
-    
+        case .responseData:
+            performSegue(withIdentifier: "ResponceData", sender: self)
+            AlamofireNetworkRequest.responseData(url: swiftbookApi)
+        case .responseString:
+            AlamofireNetworkRequest.responseString(url: swiftbookApi)
+        case .response:
+            AlamofireNetworkRequest.response(url: swiftbookApi)
+        case .downloadLargeImage:
+            performSegue(withIdentifier: "LargeImage", sender: self)
         }
     }
 
@@ -123,12 +136,19 @@ class MainViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let coursesVC = segue.destination as? CoursesViewController
+        let imageVC = segue.destination as? ImageViewController
         
         switch segue.identifier {
         case "OurCourses":
             coursesVC?.fetchData()
         case "OurCoursesWithAlamofire":
             coursesVC?.fetchDataWithAlamofire()
+        case "ShowImage":
+            imageVC?.fetchImage()
+        case "ResponceData":
+            imageVC?.fetchImageWithAlamofire()
+        case "LargeImage":
+            imageVC?.downloadImageWithProgress()
         default:
             break
         }

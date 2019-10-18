@@ -23,9 +23,25 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YlX-cb-SYq">
                                 <rect key="frame" x="177.5" y="355.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyD-fQ-F6u">
+                                <rect key="frame" x="145" y="415.5" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FtZ-ye-EOu">
+                                <rect key="frame" x="87.5" y="469" width="200" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="o2i-9A-ggZ"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fyD-fQ-F6u" firstAttribute="top" secondItem="YlX-cb-SYq" secondAttribute="bottom" constant="40" id="0xJ-pe-pBD"/>
+                            <constraint firstItem="fyD-fQ-F6u" firstAttribute="centerX" secondItem="PdE-uL-DIr" secondAttribute="centerX" id="2HP-P1-ZYt"/>
+                            <constraint firstItem="FtZ-ye-EOu" firstAttribute="top" secondItem="fyD-fQ-F6u" secondAttribute="bottom" constant="32.5" id="70f-q7-V10"/>
+                            <constraint firstItem="FtZ-ye-EOu" firstAttribute="centerX" secondItem="PdE-uL-DIr" secondAttribute="centerX" id="VAX-ml-wFA"/>
                             <constraint firstItem="YlX-cb-SYq" firstAttribute="centerY" secondItem="PdE-uL-DIr" secondAttribute="centerY" id="bzl-43-ekf"/>
                             <constraint firstItem="YlX-cb-SYq" firstAttribute="centerX" secondItem="PdE-uL-DIr" secondAttribute="centerX" id="eir-P8-JuI"/>
                             <constraint firstItem="PdE-uL-DIr" firstAttribute="top" secondItem="sDJ-Ie-o0x" secondAttribute="top" id="emi-V5-p6M"/>
@@ -38,7 +54,9 @@
                     <navigationItem key="navigationItem" title="Image" id="tDy-0P-prn"/>
                     <connections>
                         <outlet property="activityIndicator" destination="YlX-cb-SYq" id="vaC-HA-64K"/>
+                        <outlet property="completeLabel" destination="fyD-fQ-F6u" id="vHr-Og-pcm"/>
                         <outlet property="imageView" destination="PdE-uL-DIr" id="ECD-Xx-NIQ"/>
+                        <outlet property="progressView" destination="FtZ-ye-EOu" id="9kT-Qb-AQu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cav-LT-BQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,6 +120,8 @@
                         <segue destination="eEq-kV-HBK" kind="show" identifier="ShowImage" id="fOJ-r9-PUD"/>
                         <segue destination="Okz-m4-eD1" kind="show" identifier="OurCourses" id="Nfm-aE-0co"/>
                         <segue destination="Okz-m4-eD1" kind="show" identifier="OurCoursesWithAlamofire" id="rJ6-6c-GVw"/>
+                        <segue destination="eEq-kV-HBK" kind="show" identifier="ResponceData" id="9i4-Jj-toO"/>
+                        <segue destination="eEq-kV-HBK" kind="show" identifier="LargeImage" id="rqs-yz-mK3"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAE-YI-mCv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -273,5 +293,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="rJ6-6c-GVw"/>
+        <segue reference="rqs-yz-mK3"/>
     </inferredMetricsTieBreakers>
 </document>
